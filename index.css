@@ -32,7 +32,7 @@ body{
 
 #price-container{
     text-align: left;
-    margin-top: 1in;
+    margin-top: 2in;
     color: antiquewhite;
 
 }
@@ -40,9 +40,20 @@ body{
 #current-balance{
     text-align: center;
     font-size: 25px;
-    margin-top: 4in;
-    margin-left: 6em;
+    margin-top: 2.5in;
+
     color: antiquewhite;
 }
 
+#brittish-pound{
+    text-align: left;
+    margin-top: -.75in;
+    margin-left: 3in;
+}
+
+#euro{
+    text-align: right;
+    margin-top: -.8in;
+    margin-right: 3in;
+}
 
