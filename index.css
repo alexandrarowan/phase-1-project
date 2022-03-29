@@ -1,1 +1,48 @@
+body{
+    background-image: url("https://i.pinimg.com/originals/46/2f/56/462f56d9c11e41741daae2c35c70f069.jpg");
+}
+
+#title-Header{
+   font-size: 50px;
+   text-align: center;
+   color: antiquewhite;
+   
+}
+
+#Current-Conversion{
+    margin-top: .5in;
+    font-size: 30px;
+    text-align: center;
+    color: antiquewhite;
+    
+}
+
+.form-label{
+    font-size: 30px;
+    color: antiquewhite;
+    
+}
+
+#price-form{
+    text-align: left;
+    color: antiquewhite;
+    
+    
+}
+
+#price-container{
+    text-align: left;
+    margin-top: 1in;
+    color: antiquewhite;
+
+}
+
+#current-balance{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 4in;
+    margin-left: 6em;
+    color: antiquewhite;
+}
+
 

@@ -4,37 +4,39 @@
   <head>
     
     <script defer src="index.js"></script>
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>Bitcoin wallet</title>
+
   </head>
 
   <body>
    
-    </div>
-     <header>A Littel bit of Coin</header>
+    
+  </div>
+     <header id="title-Header">A Littel bit of Coin</header>
      <div>
-        <form id="current-price">
-            <label class="form-label"><strong>Bitcoin Current Price</strong></label>
-     </div>
-    <div id="price-container">
-      <form id="price-form">
+       <h2 class="form-label" id="Current-Conversion"><strong>Bitcoin Current Price</strong></h2>
+       <form id="current-price">
+         <div id="price-container">
+           <form id="price-form">
         <label class="form-label"><strong> US dollars: </strong></label>
         <input type="text" id="dollar-input"/>
         <input type="submit" value="Submit"/>
       </form>
-        <div id="price-container">
+      <div id="price-container">
         <form id="price-form">
-        <label class="form-label"><strong>Bitcoin: </strong></label>
-        <input type="text" id="transfer amount"/>
-
-        <input type="submit" value="Submit"/>
-      </form>
-    <div id="Balance">
-        <form id="current-balance">
-            <input class="form-label"><strong>Current Balance</strong>
+          <label class="form-label"><strong>Bitcoin: </strong></label>
+          <input type="text" id="transfer amount"/>
+          
+          <input type="submit" value="Submit"/>
         </form>
-    </div>
-    </div>
-    
-  </body>
+        <div id="Balance">
+          <form id="current-balance">
+            <input class="form-label" id="balance-form"><strong>Current Balance</strong>
+          </form>
+        </div>
+      </div>
+
+
+    </body>
 </html>
