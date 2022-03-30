@@ -1,7 +1,3 @@
-
-
-
-
 const bitCoinURL = "https://api.coindesk.com/v1/bpi/currentprice.json"
 const fetchBitURL = () => {
     fetch(bitCoinURL)
@@ -14,9 +10,10 @@ fetchBitURL()
 const currentBalance = document.querySelector('#current-balance')
 const dollarBalance = document.createElement('h3')
 const bitcoinBalance = document.createElement('h3')
+let storedBitValue = 0
+let storedUSDValue = 0
 
 const coinBuild = (coinObj) => {
-    console.log(coinObj)
     const currentConversion = document.querySelector('#Current-Conversion')
     const dollar = document.createElement('h3')
     dollar.id = "us-dollar"
@@ -33,38 +30,43 @@ const coinBuild = (coinObj) => {
 
     const currentPriceForm = document.querySelector('#current-price')
     currentPriceForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+         e.preventDefault()
+         coinWallet(rate);
+         currentPriceForm.reset();
+        })
+
+    const priceForm = document.querySelector('#price-form')
+    priceForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        dollarWallet(rate)
+        priceForm.reset()
+    })
+}
+
+
+
+const coinWallet = (rate) => {
     const dollarInput = document.querySelector('#dollar-input').value
     if (isNaN(dollarInput) === true) {
         alert('Error! You must enter a number!')
     } else {
         const coins = parseFloat(dollarInput) / rate
-        bitcoinBalance.textContent = `${coins} coins`
+        storedBitValue += coins
+        bitcoinBalance.textContent = `${storedBitValue} coins`
         currentBalance.append(bitcoinBalance)
-
     }
-    currentPriceForm.reset();
-})
-    const priceForm = document.querySelector('#price-form')
-    priceForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // e.stopPropagation();
-        const transferAmount = document.querySelector('#transfer-amount').value
-        // console.log(transferAmount)
-        if (isNaN(transferAmount) === true) {
-            alert('Error! You must enter a number!')
-        } else {
-            const dollars = parseFloat(transferAmount) * rate
-            dollarBalance.textContent = `$ ${dollars} USD` 
-            currentBalance.append(dollarBalance) 
-            
-        }
-        priceForm.reset()
-    })
 }
 
-const currentBal = (input) => {
-    
+const dollarWallet = (rate) => {
+    const transferAmount = document.querySelector('#transfer-amount').value
+    if (isNaN(transferAmount) === true) {
+        alert('Error! You must enter a number!')
+    } else {
+        const dollars = parseFloat(transferAmount) * rate
+        storedUSDValue += dollars
+        dollarBalance.textContent = `${storedUSDValue} dollars`
+        currentBalance.append(dollarBalance)
+    }
 }
 
 
